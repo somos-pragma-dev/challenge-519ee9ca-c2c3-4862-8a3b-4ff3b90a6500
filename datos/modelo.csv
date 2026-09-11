@@ -1,0 +1,33 @@
+supuesto,valor_base,escenario_pesimista,escenario_optimista,variacion_20pct,impacto_en_metrica,notas
+Tasa de activación baseline,0.34,0.28,0.40,+-0.06, прямо пропорциональ,Porcentaje de clientes que activan en primeros 30 días - dato histórico de los últimos 12 meses
+Tasa de adopción del onboarding,0.65,0.52,0.78,+-0.13,Alto - setiap 0.10 increase = +2.3 pp activación,Porcentaje de clientes que completan al menos paso 1 del onboarding - benchmark industria: 55-75%
+Tasa de conversión onboarding->activación,0.72,0.60,0.84,+-0.12,Alto - setiap 0.10 increase = +1.8 pp activación,Porcentaje de clientes que completan onboarding y realizan transacción
+Coste por cliente del programa de incentivos,8.00,10.00,6.00,+-2.00,Inverso - menor coste = mayor ROI,Coste marginal de los puntos/beneficios ofrecidos
+Ingreso promedio por cliente activado,45.00,35.00,55.00,+-10.00, прямо пропорциональ,Ingreso promedio en primeros 6 meses post-activación
+Tasa de respuesta a comunicaciones,0.22,0.16,0.28,+-0.06,Medio - setiap 0.05 increase = +0.5 pp,Porcentaje de clientes que abren emails/notificaciones post-registro
+Efectividad incremental de comunicación,0.03,0.02,0.04,+-0.01,Medio - langsung ke aktivasi,Puntos porcentuales adicionales de activación atribuibles a comunicación proactiva
+Coste de desarrollo onboarding,120000,150000,90000,+-30000,Inverso - mayor inversión = menor ROI en corto plazo,Inversión inicial en desarrollo e integración
+Coste operativo mensual del programa,15000,20000,10000,+-5000,Inverso - afecta ROI a partir del mes 13,Costes de mantenimiento, soporte y hosting
+
+VARIABLE,FORMULA,RESULTADO_BASE,PESIMISTA,OPTIMISTA
+Impacto esperados_onboarding,Adopción * Conversión * (1-Baseline),0.468,0.312,0.655,Proporción de clientes adicionales que activarían por el programa
+Puntos porcentuales ganados_onboarding,Impacto_esperado * 100 / (1-Baseline),12.7 pp,5.8 pp,19.6 pp,Incremento real en tasa de activación
+Coste total primer año,Desarrollo + (Operativo_mensual * 12),300000,390000,210000,Inversión total año 1
+Coste por cliente activado,Coste_total / (Clientes_nuevos_anuales * Puntos_ganados/100),5.91,16.85,2.68,Coste de adquirir un cliente activado adicional
+Ingreso adicional año 1,Clientes_nuevos * Puntos_ganados/100 * Ingreso_promedio,765000,348000,1176000,Ingresos incrementales por mayor activación
+ROI primer año,(Ingreso_adicional - Coste_total) / Coste_total,1.55,-0.11,4.60,Return on Investment año 1
+ROI a 18 meses,(Ingreso_adicional_18m - Coste_total) / Coste_total,3.40,0.85,6.20,ROI considerando ingresos de 18 meses
+
+ESCENARIO,PROBABILIDAD,PONDERACION,RESULTADO_ponderado
+Pesimista,0.25,0.25,0.0625,Escenario de baja adopción y alto coste
+Base,0.50,0.50,0.2500,Escenario más probable según análisis
+Optimista,0.25,0.25,0.0625,Escenario de alta adopción y bajo coste
+
+RESULTADO_ESPERADO_PONDERADO,12.1 pp,ROI esperado: 255%,Ponderación por escenarios - enfoque conservador
+
+ANALISIS_SENSIBILIDAD,VARIABLE_MAS_SENSIBLE,IMPACTO_EN_RESULTADO
+Onboarding adoption rate,Tasa de adopción del onboarding,+-7.0 pp si varía +-20%
+Conversion rate,Tasa de conversión onboarding->activación,+-5.4 pp si varía +-20%
+Ingreso promedio,Ingreso por cliente activado,+-30% en ROI si varía +-20%
+
+RECOMENDACION_FINAL,IMPLEMENTAR ONBOARDING DIGITAL AUTOMATIZADO,Justificación: Mayor impacto ponderado (12.1 pp), ROI atractivo (255%), esfuerzo medio, validación mediante test A/B feasible

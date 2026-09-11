@@ -4,7 +4,7 @@ Instrucciones para el agente de IA que abra este repositorio (Claude Code, Curso
 
 ## Que es este repositorio
 
-Es el codigo base de un reto de aprendizaje de Pragma: **Diseño y priorización de iniciativas para aumentar la activación de clientes nuevos**.
+Es el codigo base de un reto de aprendizaje de Pragma: **Diseño y Priorización de Árbol de Métricas**.
 
 | | |
 |---|---|
@@ -12,8 +12,8 @@ Es el codigo base de un reto de aprendizaje de Pragma: **Diseño y priorización
 | Nivel | advanced-l2 |
 | Chapter | Business Consulting |
 | Especialidad | Business Consulting |
-| Stack | Markdown + CSV + Notion (opcional) / Árbol de Métricas + Priorización por Impacto/Esfuerzo |
-| Patron arquitectonico | Estructura basada en documentos con análisis cuantitativo y priorización de iniciativas |
+| Stack | Markdown + CSV / Árbol de Métricas + Priorización por Impacto/Esfuerzo |
+| Patron arquitectonico | Estructura de Consultoría de Negocio con Análisis Cuantitativo |
 | Tiempo estimado | 8 horas |
 
 ## Tu tarea
@@ -34,9 +34,9 @@ En orden:
 
 No resuelvas nada de esto:
 
-- **Fase 1 — Definición del árbol de métricas**: Árbol de métricas documentado.
-- **Fase 2 — Priorización de iniciativas**: Matriz de priorización de iniciativas.
-- **Fase 3 — Revisión y ajustes**: Árbol de métricas y matriz de priorización ajustados.
+- **Fase 1 — Definición de la Métrica Objetivo**: Descripción clara y detallada de la métrica objetivo 'activación de clientes nuevos'.
+- **Fase 2 — Descomposición de la Métrica en Palancas Accionables**: Árbol de métricas que descompone la métrica objetivo en diferentes iniciativas o palancas accionables.
+- **Fase 3 — Priorización de Iniciativas**: Lista de iniciativas priorizadas con supuestos explícitos sobre su impacto y el esfuerzo requerido para implementarlas.
 
 Distincion operativa:
 
@@ -47,23 +47,21 @@ Distincion operativa:
 
 No se detectaron huecos: estan los archivos declarados, el boilerplate del stack y ninguna referencia quedo colgando. Igual corre el comando de verificacion — que los archivos existan no garantiza que compilen.
 
-### Presentes (7)
+### Presentes (6)
 
-- `documentacion/diagnostico.md`
-- `documentacion/arbol-de-metricas.md`
-- `documentacion/plan-de-accion.md`
-- `documentacion/recomendacion.md`
-- `documentacion/matriz-priorizacion.md`
-- `modelos/hipotesis.csv`
-- `modelos/modelo.csv`
+- `datos/hipotesis.csv`
+- `datos/modelo.csv`
+- `documentos/diagnostico.md`
+- `documentos/arbol-de-metricas.md`
+- `documentos/plan-de-accion.md`
+- `documentos/recomendacion.md`
 
 ### Capas del patron declarado
 
 Cada una tiene que existir como directorio real con al menos un archivo. Codigo plano en la raiz no satisface el patron.
 
-- `analisis`
-- `modelos`
-- `documentacion`
+- `documentos`
+- `datos`
 
 ## Verificacion
 
@@ -78,7 +76,7 @@ Ese comando pasando es la definicion de "terminado" para vos.
 - Un solo ecosistema: no declares librerias de otro lenguaje ni mezcles gestores de paquetes.
 - Toda libreria que uses tiene que estar declarada en el manifiesto de dependencias.
 - Todo import declarado tiene que usarse; todo tipo usado tiene que existir o venir de una dependencia declarada.
-- El patron es **Estructura basada en documentos con análisis cuantitativo y priorización de iniciativas**: los contratos (interfaces, puertos) los define la capa interna y los implementa la externa, nunca al revés.
+- El patron es **Estructura de Consultoría de Negocio con Análisis Cuantitativo**: los contratos (interfaces, puertos) los define la capa interna y los implementa la externa, nunca al revés.
 - Los archivos que crees llevan implementacion real, no stubs: sin `TODO`, sin cuerpos vacios, sin `// getters y setters`.
 
 ## Contexto del candidato
