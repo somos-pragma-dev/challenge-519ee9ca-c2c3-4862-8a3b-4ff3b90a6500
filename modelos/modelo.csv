@@ -1,0 +1,45 @@
+variable,descripcion,valor_base,fuente,rango_min,rango_max,formula_relacion,notas
+MAU_nuevo,Clientes nuevos que se activan en los primeros 30 días,350,Data Warehouse - tabla activations,200,500,,Meta principal del modelo
+TC_tasa_conversion,Tasa de conversión de lead a cliente nuevo,0.12,CRM - funnel report,0.08,0.18,,Base del funnel
+TA_tasa_act,Tasa de activación (cliente nuevo que completa el flujo de onboarding),0.35,Data Warehouse - tabla activations,0.25,0.50,MAU_nuevo = TC_tasa_conversion * LEADS * TA_tasa_act,Métrica objetivo a optimizar
+LEADS,Leads generados mensuales,2500,Marketing - plataforma de ads,1500,4000,,Input del funnel
+TP_onboarding,Tiempo promedio de onboarding (días),7,Product Analytics - user journey,3,14,TA_tasa_act = 0.62 - 0.04 * TP_onboarding,Correlación negativa validada con r=-0.72
+TC_email,Tasa de apertura de emails de activación,0.42,Email platform,0.30,0.55,,Secuencia D+1, D+3, D+7
+TC_push,Tasa de apertura de push notifications,0.55,Mobile SDK,0.40,0.70,,Notificaciones en D+2, D+5
+Tasa_engagement,Tasa de engagement con el producto (acciones/semana),3.2,Product Analytics,1.5,6.0,TA_tasa_act = 0.15 + 0.08 * Tasa_engagement,Proxy fuerte de activación
+NR_NPS,NPS de usuarios nuevos (encuesta D+30),42,Customer Success,25,65,,Correlación con activación r=0.58
+TC_csmpersonalizado,Tasa de activación con CSM personalizado (segmento Enterprise),0.65,CS team - tracking,0.50,0.80,,Para clientes con ARR>$50k
+Tasa_soporte,Tasa de resolución en primer contacto para nuevos usuarios,0.78,Support desk,0.60,0.90,,Tickets relacionados con onboarding
+TC_academy,Tasa de completación de tutorials de academy,0.25, LMS interno,0.15,0.40,,Completion del onboarding path
+Tasa_gamificacion,Tasa de activación con gamificación,0.41, A/B test results,0.35,0.50,,Para segmento <35 años
+
+ESCENARIO,parametro_cambiado,nuevo_valor,impacto_activacion,impacto_mau_nuevo,delta_mensual,probabilidad,notas
+Base,—,—,0.350,350,—,1.00,Escenario actual sin cambios
+Optimista_email,TC_email,0.55,0.388,388,+38,0.25,Secuencia de emails optimizada con contenido personalizado
+Conservador_email,TC_email,0.30,0.359,359,+9,0.30,Decreased open rates por saturación
+Optimista_onboarding,TP_onboarding,3,0.470,470,+120,0.20,Onboarding reducido a 3 días con nueva UX
+Conservador_onboarding,TP_onboarding,14,0.220,220,-130,0.10,Si el onboarding se complica por falta de recursos
+Combinado_email_onboarding,TC_email+TP_onboarding,0.55 / 3,0.494,494,+144,0.15,Mejora en ambos factores simultáneamente
+Enterprise_csm,TC_csmpersonalizado,0.65,0.365,365,+15,0.20,CSM solo para enterprise (15% del total)
+Gamificacion_jovenes,Tasa_gamificacion,0.41,0.362,362,+12,0.25,Gamificación para segmento joven (40% de usuarios)
+Peor_caso,TP_onboarding+TC_email,14 / 0.30,0.182,182,-168,0.05,Escenario de riesgo: onboarding lento + emails ignorados
+Mejor_caso,TP_onboarding+TC_email,3 / 0.55,0.530,530,+180,0.10,Escenario ideal: onboarding rápido + emails efectivos
+
+SENSIBILIDAD,variable,sensibilidad_elasticidad,impacto_1%_aumento,comentario
+Elasticidad_TP_onboarding,TP_onboarding,-0.058,-0.58%,Por cada día adicional de onboarding, la activación baja 0.58%
+Elasticidad_TC_email,TC_email,0.032,+0.32%,Por cada 1% de aumento en open rate, activación sube 0.32%
+Elasticidad_Tasa_engagement,Tasa_engagement,0.125,+1.25%,Por cada acción adicional por semana, activación sube 1.25%
+Elasticidad_NPS,NR_NPS,0.004,+0.04%,Por cada punto de NPS, activación sube 0.04% (débil directo, vía satisfacción)
+Elasticidad_TC_csmpersonalizado,TC_csmpersonalizado,0.003,+0.03%,Impacto directo pero solo para 15% de usuarios enterprise
+
+SUPuesto,descripcion,valor,fuente,fecha_actualizacion,confianza,notas
+S1,Tasa de activación baseline 35%,0.35,Data Warehouse - últimos 6 meses,2025-01-15,alta,Medida como usuarios que completan onboarding en 30 días
+S2,Correlación tiempo-onboarding y activación,r=-0.72,Análisis de regresión histórico,2025-01-10,alta,Dataset de 5000 usuarios con comportamiento de onboarding
+S3,Distribución de segmentos: Enterprise 15%, SMB 60%, Startup 25%,—,CRM + Data Warehouse,2025-01-12,alta,Basado en ARR y tamaño de empresa
+S4,Email sequence actual tiene CTR de 2.1%,0.021,Email platform - último trimestre,2025-01-14,media,CTR bajo indica necesidad de optimización
+S5,Usuarios que no se activan en D+7 tienen 40% chance si se extiende试用期,0.40,Estudio de cohorts históricas,2025-01-08,media,Análisis de usuarios que reactivaron con extensión
+S6,Presupuesto disponible para iniciativas,Q2 2025: $120k,Finance,2025-01-01,alta,Incluye herramientas, personal y tecnología
+S7,Equipo disponible: 2 PMs, 1 UX, 3 devs, 1 data analyst,—,HR - resource planning,2025-01-05,alta,Capacidad de ejecución en el quarter
+S8,Timeline de implementación: 8 semanas para iniciativas maiores,8,Project plan,2025-01-02,media,Incluye desarrollo, testing y rollout
+S9,Tasa de conversión lead→cliente actual,0.12,CRM,2025-01-15,alta,No es foco de este análisis pero es input del funnel
+S10,Usuarios con edad <35 años representan 40% de la base,0.40,User analytics,2025-01-11,media,Dato relevante para iniciativas de gamificación
