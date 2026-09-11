@@ -1,6 +1,6 @@
-# Diseño y Priorización de Árbol de Métricas
+# Diseño y priorización de iniciativas para aumentar la activación de clientes nuevos
 
-Tu equipo de consultoría de negocio necesita descomponer una métrica objetivo en palancas accionables y priorizarlas por impacto y esfuerzo. La métrica objetivo es 'activación de clientes nuevos'. Debes diseñar un árbol de métricas que represente las diferentes iniciativas que pueden influir en esta métrica y priorizarlas basándote en supuestos explícitos sobre su impacto y el esfuerzo requerido para implementarlas.
+La empresa necesita aumentar la activación de clientes nuevos. Para lograrlo, se requiere descomponer la métrica objetivo en palancas accionables y priorizarlas por impacto y esfuerzo con supuestos explícitos. El objetivo es diseñar un árbol de métricas que guíe la toma de decisiones y priorice las iniciativas más efectivas.
 
 ## Informacion General
 
@@ -8,8 +8,8 @@ Tu equipo de consultoría de negocio necesita descomponer una métrica objetivo 
 |-------|-------|
 | **Tema** | Árbol de métricas y priorización de iniciativas |
 | **Nivel** | advanced-l2 |
-| **Tipo** | practical |
-| **Tiempo estimado** | 8 horas |
+| **Tipo** | mixed |
+| **Tiempo estimado** | 10 horas |
 
 ## Fases del Reto
 
@@ -38,76 +38,100 @@ Tu equipo de consultoría de negocio necesita descomponer una métrica objetivo 
 
 </details>
 
-### Fase 1: Definición de la Métrica Objetivo
+### Fase 1: Identificación de métricas clave
 
-**Objetivo:** Clarificar y definir la métrica objetivo 'activación de clientes nuevos' en términos del negocio.
+**Objetivo:** Identificar las métricas clave que influyen en la activación de clientes nuevos.
 
 **Tiempo estimado:** 2 horas
 
 **Instrucciones:**
 
-- Identifica y describe la métrica objetivo 'activación de clientes nuevos' en términos del negocio. Incluye una definición clara y los supuestos subyacentes.
+- Enumera las métricas relevantes para la activación de clientes nuevos.
+- Define cada métrica y su importancia en el proceso de activación.
 
-**Entregable:** Descripción clara y detallada de la métrica objetivo 'activación de clientes nuevos'.
+**Entregable:** Lista de métricas clave con definiciones y relevancia.
 
 <details>
 <summary>Pistas de conocimiento</summary>
 
-- Considera las diferentes formas en que un cliente puede ser considerado 'activado' y los supuestos que esto implica.
+- Considera métricas como tasa de conversión, tiempo de activación, engagement inicial, etc.
 
 </details>
 
-### Fase 2: Descomposición de la Métrica en Palancas Accionables
+### Fase 2: Descomposición de métricas en palancas accionables
 
-**Objetivo:** Descomponer la métrica objetivo en diferentes iniciativas o palancas accionables.
+**Objetivo:** Descomponer cada métrica en palancas accionables.
 
 **Tiempo estimado:** 3 horas
 
 **Instrucciones:**
 
-- Descompone la métrica objetivo 'activación de clientes nuevos' en diferentes iniciativas o palancas accionables. Asegúrate de que cada palanca sea clara y medible.
+- Para cada métrica identificada, descompónela en palancas accionables.
+- Describe cómo cada palanca puede influir en la métrica.
 
-**Entregable:** Árbol de métricas que descompone la métrica objetivo en diferentes iniciativas o palancas accionables.
+**Entregable:** Desglose de métricas en palancas accionables con descripciones.
 
 <details>
 <summary>Pistas de conocimiento</summary>
 
-- Considera diferentes áreas del negocio que pueden influir en la activación de clientes nuevos, como marketing, producto, servicio al cliente, etc.
+- Piensa en cómo cada palanca puede ser implementada y medida.
 
 </details>
 
-### Fase 3: Priorización de Iniciativas
+### Fase 3: Priorización de iniciativas
 
-**Objetivo:** Priorizar las iniciativas identificadas basándote en su impacto y el esfuerzo requerido para implementarlas.
+**Objetivo:** Priorizar las iniciativas basadas en impacto y esfuerzo.
 
 **Tiempo estimado:** 3 horas
 
 **Instrucciones:**
 
-- Prioriza las iniciativas identificadas en la fase anterior basándote en su impacto y el esfuerzo requerido para implementarlas. Asegúrate de que tus supuestos sean explícitos.
+- Evalúa cada palanca en términos de impacto y esfuerzo.
+- Prioriza las iniciativas con supuestos explícitos.
 
-**Entregable:** Lista de iniciativas priorizadas con supuestos explícitos sobre su impacto y el esfuerzo requerido para implementarlas.
+**Entregable:** Lista de iniciativas priorizadas con supuestos explícitos.
 
 <details>
 <summary>Pistas de conocimiento</summary>
 
-- Considera diferentes metodologías de priorización, como el método de los 2x2 o el método de puntuación.
+- Considera el ROI potencial de cada iniciativa y el esfuerzo requerido para implementarla.
+
+</details>
+
+### Fase 4: Diseño del árbol de métricas
+
+**Objetivo:** Diseñar un árbol de métricas que guíe la toma de decisiones.
+
+**Tiempo estimado:** 2 horas
+
+**Instrucciones:**
+
+- Crea un árbol de métricas que incluya las métricas clave, las palancas accionables y las iniciativas priorizadas.
+- Asegúrate de que el árbol sea claro y fácil de entender.
+
+**Entregable:** Árbol de métricas diseñado.
+
+<details>
+<summary>Pistas de conocimiento</summary>
+
+- Utiliza un formato visual para representar el árbol de métricas.
 
 </details>
 
 ## Dimensiones Evaluadas
 
-- **queEs**: ¿Qué es la métrica objetivo 'activación de clientes nuevos' y cómo se descompone en iniciativas accionables?
-- **paraQueSirve**: ¿Para qué sirve descomponer la métrica objetivo en iniciativas accionables y priorizarlas?
-- **comoSeUsa**: ¿Cómo se usa el árbol de métricas para guiar la toma de decisiones en el negocio?
-- **erroresComunes**: ¿Cuáles son los errores comunes al descomponer métricas y priorizar iniciativas?
-- **queDecisionesImplica**: ¿Qué decisiones implica la priorización de iniciativas basada en impacto y esfuerzo?
+- **queEs**: ¿Qué es una métrica clave y por qué es importante en el proceso de activación de clientes nuevos?
+- **paraQueSirve**: ¿Para qué sirve descomponer una métrica en palancas accionables?
+- **comoSeUsa**: ¿Cómo se pueden usar las palancas accionables para influir en las métricas?
+- **erroresComunes**: ¿Cuáles son los errores comunes al priorizar iniciativas basadas en impacto y esfuerzo?
+- **queDecisionesImplica**: ¿Qué decisiones implica la priorización de iniciativas y cómo se pueden justificar con supuestos explícitos?
 
 ## Criterios de Evaluacion
 
-- Definición clara y detallada de la métrica objetivo 'activación de clientes nuevos'.
-- Árbol de métricas que descompone la métrica objetivo en diferentes iniciativas o palancas accionables.
-- Lista de iniciativas priorizadas con supuestos explícitos sobre su impacto y el esfuerzo requerido para implementarlas.
+- Identificación correcta de métricas clave.
+- Descomposición efectiva de métricas en palancas accionables.
+- Priorización adecuada de iniciativas con supuestos explícitos.
+- Diseño claro y comprensible del árbol de métricas.
 
 ## Como trabajar con un asistente de IA
 

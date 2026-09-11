@@ -4,7 +4,7 @@ Instrucciones para el agente de IA que abra este repositorio (Claude Code, Curso
 
 ## Que es este repositorio
 
-Es el codigo base de un reto de aprendizaje de Pragma: **Diseño y Priorización de Árbol de Métricas**.
+Es el codigo base de un reto de aprendizaje de Pragma: **Diseño y priorización de iniciativas para aumentar la activación de clientes nuevos**.
 
 | | |
 |---|---|
@@ -12,9 +12,9 @@ Es el codigo base de un reto de aprendizaje de Pragma: **Diseño y Priorización
 | Nivel | advanced-l2 |
 | Chapter | Business Consulting |
 | Especialidad | Business Consulting |
-| Stack | Markdown + CSV / Árbol de Métricas + Priorización por Impacto/Esfuerzo |
-| Patron arquitectonico | Estructura de Consultoría de Negocio con Análisis Cuantitativo |
-| Tiempo estimado | 8 horas |
+| Stack | Markdown / Árbol de Métricas con Priorización por Impacto/Esfuerzo |
+| Patron arquitectonico | Estructura de Trabajo Basada en Evidencia con Análisis Cuantitativo y Cualitativo |
+| Tiempo estimado | 10 horas |
 
 ## Tu tarea
 
@@ -34,9 +34,10 @@ En orden:
 
 No resuelvas nada de esto:
 
-- **Fase 1 — Definición de la Métrica Objetivo**: Descripción clara y detallada de la métrica objetivo 'activación de clientes nuevos'.
-- **Fase 2 — Descomposición de la Métrica en Palancas Accionables**: Árbol de métricas que descompone la métrica objetivo en diferentes iniciativas o palancas accionables.
-- **Fase 3 — Priorización de Iniciativas**: Lista de iniciativas priorizadas con supuestos explícitos sobre su impacto y el esfuerzo requerido para implementarlas.
+- **Fase 1 — Identificación de métricas clave**: Lista de métricas clave con definiciones y relevancia.
+- **Fase 2 — Descomposición de métricas en palancas accionables**: Desglose de métricas en palancas accionables con descripciones.
+- **Fase 3 — Priorización de iniciativas**: Lista de iniciativas priorizadas con supuestos explícitos.
+- **Fase 4 — Diseño del árbol de métricas**: Árbol de métricas diseñado.
 
 Distincion operativa:
 
@@ -45,23 +46,31 @@ Distincion operativa:
 
 ## Lo que falta y tenes que completar
 
-No se detectaron huecos: estan los archivos declarados, el boilerplate del stack y ninguna referencia quedo colgando. Igual corre el comando de verificacion — que los archivos existan no garantiza que compilen.
+### 1. Archivos que la arquitectura declara (1 de 9)
 
-### Presentes (6)
+La propuesta arquitectonica del reto los lista y no llegaron al repo. Crealos con implementacion real, respetando la capa en la que viven:
 
-- `datos/hipotesis.csv`
-- `datos/modelo.csv`
-- `documentos/diagnostico.md`
-- `documentos/arbol-de-metricas.md`
-- `documentos/plan-de-accion.md`
-- `documentos/recomendacion.md`
+- [ ] `visualizacion/matriz_priorizacion.png`
+
+### Presentes (8)
+
+- `diagnostico/diagnostico.md`
+- `diagnostico/metricas_clave.csv`
+- `analisis/arbol-de-metricas.md`
+- `analisis/hipotesis.csv`
+- `analisis/modelo.csv`
+- `priorizacion/plan-de-accion.md`
+- `priorizacion/recomendacion.md`
+- `visualizacion/arbol_metricas.png`
 
 ### Capas del patron declarado
 
 Cada una tiene que existir como directorio real con al menos un archivo. Codigo plano en la raiz no satisface el patron.
 
-- `documentos`
-- `datos`
+- `diagnostico`
+- `analisis`
+- `priorizacion`
+- `visualizacion`
 
 ## Verificacion
 
@@ -76,7 +85,7 @@ Ese comando pasando es la definicion de "terminado" para vos.
 - Un solo ecosistema: no declares librerias de otro lenguaje ni mezcles gestores de paquetes.
 - Toda libreria que uses tiene que estar declarada en el manifiesto de dependencias.
 - Todo import declarado tiene que usarse; todo tipo usado tiene que existir o venir de una dependencia declarada.
-- El patron es **Estructura de Consultoría de Negocio con Análisis Cuantitativo**: los contratos (interfaces, puertos) los define la capa interna y los implementa la externa, nunca al revés.
+- El patron es **Estructura de Trabajo Basada en Evidencia con Análisis Cuantitativo y Cualitativo**: los contratos (interfaces, puertos) los define la capa interna y los implementa la externa, nunca al revés.
 - Los archivos que crees llevan implementacion real, no stubs: sin `TODO`, sin cuerpos vacios, sin `// getters y setters`.
 
 ## Contexto del candidato

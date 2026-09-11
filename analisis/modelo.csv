@@ -1,0 +1,40 @@
+variable,valor_base,escenario_optimista,escenario_pesimista,supuesto,formula_fuente
+Tasa Activacion Actual,45%,45%,45%,Medición histórica D30 de los últimos 12 meses,Registros de base de datos
+Total Clientes Nuevos Mensuales,2500,2500,2500,Promedio móvil 6 meses,CRM reporting
+Clientes Activados Mensuales (base),1125,1125,1125,Tasa actual × Total nuevos,Calculado
+Incremento por P1 (Contenido),2.5%,4.0%,1.5%,Impacto incremental por mejora en contenido educativo,Ensayo controlado P1
+Incremento por P3 (Login freq),1.8%,2.5%,1.0%,Impacto incremental por notificaciones,Ensayo controlado P3
+Incremento por P4 (Recibos valor),2.0%,3.0%,1.2%,Impacto incremental por weekly summary,Ensayo controlado P4
+Incremento por P5 (Claridad),1.2%,1.8%,0.6%,Impacto incremental por onboarding simplificado,Funnel analysis P5
+Incremento por P2 (Core D3),2.5%,3.5%,1.5%,Impacto incremental por uso temprano core,Cohort analysis P2
+Incremento por P6 (Feature engagement),1.5%,2.2%,0.8%,Impacto incremental por feature highlight,Feature flags P6
+Incremento por P7 (Tiempo activación),1.0%,1.5%,0.5%,Impacto incremental por simplificación,Audit técnico P7
+Incremento por P8 (Primera transacción),0.8%,1.2%,0.4%,Impacto incremental por checkout simplificado,Funnel checkout P8
+Incremento por P9 (Soporte FCR),0.6%,0.9%,0.3%,Impacto incremental por self-service,Análisis tickets P9
+Incremento Total Acumulado,13.9%,21.6%,7.8%,Suma de impactos individuales ponderados por sinergia,Calculado
+Tasa Activacion Objetivo,58.9%,66.6%,52.8%,Tasa base + Incremento,Calculado
+Clientes Activados Objetivo,1473,1665,1320,Total nuevos × Tasa objetivo,Calculado
+Incremento Clientes Activados,348,540,195,Clientes objetivo - Clientes base,Calculado
+Inversion Estimada (USD),85000,120000,50000,Sumatoria de costos de implementación,Múltiples proveedores
+Costo por Cliente Adicional,244,222,256,Inversión / Incremento clientes,Calculado
+Lifetime Value por Cliente,850,850,850,Promedio LTV histórico,Finance reporting
+Revenue Incremental Anual,295800,459000,165750,LTV × Incremento clientes × 12 meses,Calculado
+ROI,248%,283%,212%,(Revenue - Inversión) / Inversión × 100,Calculado
+Payback Period (meses),3.4,3.1,3.6,Inversión / (Revenue mensual),Calculado
+
+// === SENSIBILIDAD: Impacto por escenario ===
+parametro,valor_base,var_minus_10pct,var_plus_10pct,impacto_en_roi
+Clientes Nuevos Mensuales,2500,2250,2750,"-8.2%, +9.1%"
+Lifetime Value,850,765,935,"-12.5%, +14.8%"
+Tasa Activacion Base,45%,40.5%,49.5%"-18.7%, +22.3%"
+Incremento Total,13.9%,12.5%,15.3%,"-9.8%, +11.2%"
+Inversion,85000,76500,93500,"+10.5%, -9.1%"
+
+// === SUPuestos EXPLícITOS ===
+supuesto,valor,fuente,fecha_actualizacion
+Los incrementos de cada palanca son independientes y acumulables,0.85 factor de sinergia,Estimación conservadora por interacción entre iniciativas,2024-01
+El costo de implementación incluye desarrollo, testing y deployment,Todos los proyectos,Presupuesto de engineering,2024-01
+El LTV de cliente nuevo es equivalente al LTV de cliente existente,100%,Asunción estándar de negocio,2024-01
+La tasa de activación se mide a D30 sin considerar churn posterior,D30,Definición de métricas,2024-01
+El escenario pesimista asume que solo las palancas de bajo esfuerzo funcionan,Ver valores,Experiencia histórica,2024-01
+El escenario optimista asume adopción completa de todas las palancas,Ver valores,Best case planning,2024-01

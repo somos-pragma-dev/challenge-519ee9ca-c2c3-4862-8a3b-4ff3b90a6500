@@ -1,0 +1,114 @@
+# ÁRBOL DE MÉTRICAS - Activación de Clientes Nuevos
+# Este código genera la visualización del árbol de métricas.
+# Para visualizar: copiar en https://mermaid.live/ o usar extensión de VS Code
+
+```mermaid
+flowchart TD
+    subgraph OBJ["OBJETIVO PRINCIPAL"]
+        O1["Aumentar la activación de clientes nuevos"]
+    end
+    
+    subgraph KPIS["MÉTRICAS CLAVE (KPIs)"]
+        K1["Tasa de Activación"]
+        K2["Tiempo hasta Primera Acción"]
+        K3["Nivel de Engagement Inicial"]
+        K4["Retención a 30 días"]
+    end
+    
+    subgraph PALANCAS1["PALANCAS - Tasa de Activación"]
+        P1_1["Onboarding guiado paso a paso"]
+        P1_2["Email de bienvenida automatizado"]
+        P1_3["Incentivo por primera acción"]
+    end
+    
+    subgraph PALANCAS2["PALANCAS - Tiempo hasta Primera Acción"]
+        P2_1["Reducción de fricción en registro"]
+        P2_2["Tutorial interactivo en-app"]
+        P2_3["Notificaciones push de recordatorio"]
+    end
+    
+    subgraph PALANCAS3["PALANCAS - Nivel de Engagement Inicial"]
+        P3_1["Contenido personalizado por segmento"]
+        P3_2["Gamificación de primeras acciones"]
+        P3_3["Recommender system básico"]
+    end
+    
+    subgraph PALANCAS4["PALANCAS - Retención a 30 días"]
+        P4_1["Programa de fidelización inicial"]
+        P4_2["Email nurturing sequence"]
+        P4_3["Soporte proactivo en primeras semanas"]
+    end
+    
+    O1 --> K1
+    O1 --> K2
+    O1 --> K3
+    O1 --> K4
+    
+    K1 --> P1_1
+    K1 --> P1_2
+    K1 --> P1_3
+    
+    K2 --> P2_1
+    K2 --> P2_2
+    K2 --> P2_3
+    
+    K3 --> P3_1
+    K3 --> P3_2
+    K3 --> P3_3
+    
+    K4 --> P4_1
+    K4 --> P4_2
+    K4 --> P4_4
+    
+    style OBJ fill:#1a73e8,color:#fff
+    style KPIS fill:#34a853,color:#fff
+    style PALANCAS1 fill:#fbbc04,color:#000
+    style PALANCAS2 fill:#fbbc04,color:#000
+    style PALANCAS3 fill:#fbbc04,color:#000
+    style PALANCAS4 fill:#fbbc04,color:#000
+```
+
+## Leyenda de Colores:
+- **Azul (Objetivo)**: Meta principal a alcanzar
+- **Verde (KPIs)**: Métricas clave que miden el progreso
+- **Amarillo (Palancas)**: Iniciativas accionables que influyen en los KPIs
+
+## Descripción de las Palancas:
+
+### Tasa de Activación (KPIs -> 15% objetivo actual -> 25% meta)
+1. **Onboarding guiado**: Tutoriales paso a paso con进度指示器
+2. **Email de bienvenida**: Secuencia de 3 emails en primeros 7 días
+3. **Incentivo primera acción**: Descuento 10% o puntos duplicados
+
+### Tiempo hasta Primera Acción (KPIs -> 5 días promedio -> 2 días meta)
+1. **Reducción fricción**: Eliminar campos opcionales del registro
+2. **Tutorial interactivo**: Popovers educativos en primer uso
+3. **Notificaciones push**: Recordatorio día 1 y día 3 si no hay acción
+
+### Nivel de Engagement Inicial (KPIs -> Score 30/100 -> 60/100 meta)
+1. **Contenido personalizado**: Recomendaciones basadas en fuente de tráfico
+2. **Gamificación**: Logros, badges, barras de progreso
+3. **Recommender**: "Productos populares en tu categoría"
+
+### Retención a 30 días (KPIs -> 40% actual -> 60% meta)
+1. **Fidelización**: Programa de puntos desde el día 1
+2. **Nurturing**: Emails semanales con contenido de valor
+3. **Soporte proactivo**: Chatbot disponible, revisión de cuenta a día 14
+
+## Fuente de Datos:
+- Analytics: Google Analytics 4 + Mixpanel
+- Customer Data Platform: Segment
+- CRM: HubSpot para tracking de emails
+- Research: Encuestas de churn a clientes inactivos
+
+## Frecuencia de Revisión:
+- Dashboard en tiempo real (actualización diaria)
+- Revisión semanal con equipo de producto
+- Reporte mensual para stakeholders ejecutivos
+
+# Instrucciones para generar la imagen PNG:
+1. Copiar el código Mermaid arriba
+2. Ir a https://mermaid.live/
+3. Pegar el código en el editor
+4. Descargar como PNG (configurar resolución 1920x1080 para calidad)
+5. Guardar como `arbol_metricas.png` en esta carpeta
